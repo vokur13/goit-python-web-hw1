@@ -29,6 +29,7 @@ class AddressBook(AbsBook, UserList):
 
     def add(self, value):
         self.append(value)
+        print('New entry added to the book')
 
     def search(self, key):
         print([i for i in self if i['name'] == key])
@@ -43,7 +44,7 @@ class AddressBook(AbsBook, UserList):
         if path.exists():
             contents = path.read_bytes()
             self.data = pickle.loads(contents)
-            print('Address Book records are available to operate with. Enter your next command.')
+            print('Address Book records are available to operate with.')
         else:
             print('No data to recover')
 

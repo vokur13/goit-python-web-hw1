@@ -1,5 +1,6 @@
 from fabrique import Operation, TypeOperation, Factory, command
 from address_book import book
+from adapter import pretty_view
 
 
 class View(Operation):
@@ -8,7 +9,7 @@ class View(Operation):
         self.payload = payload
 
     def operation(self):
-        return print(book.value_of())
+        return pretty_view(book.value_of())
 
     def info(self):
         return TypeOperation.VIEW.value
@@ -25,3 +26,5 @@ class ViewFactory(Factory):
 def view():
     payload = ()
     command(ViewFactory(payload))
+
+
