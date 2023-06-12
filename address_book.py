@@ -26,10 +26,17 @@ class AbsBook(ABC):
         ...
 
 
-class AddressBook(AbsBook, UserList):
+class AddressBook(UserList, AbsBook):
+    __instance = None
+
     def __init__(self):
         super().__init__()
         self.path = 'book.bin'
+
+    def __new__(cls):
+        if cls.__instance is None:
+            cls.__instance = super().__new__(AddressBook)
+        return cls.__instance
 
     def add(self, value):
         self.append(value)
@@ -55,5 +62,3 @@ class AddressBook(AbsBook, UserList):
     def value_of(self):
         return self
 
-
-book = AddressBook()

@@ -1,5 +1,7 @@
 from fabrique import Operation, TypeOperation, Factory, command
-from address_book import book
+from address_book import AddressBook
+
+book = AddressBook()
 
 
 class Search(Operation):

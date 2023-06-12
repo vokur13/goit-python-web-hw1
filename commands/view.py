@@ -1,6 +1,8 @@
 from fabrique import Operation, TypeOperation, Factory, command
-from address_book import book
+from address_book import AddressBook
 from adapter import pretty_view
+
+book = AddressBook()
 
 
 class View(Operation):
@@ -26,5 +28,3 @@ class ViewFactory(Factory):
 def view():
     payload = ()
     command(ViewFactory(payload))
-
-

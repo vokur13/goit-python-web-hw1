@@ -1,6 +1,8 @@
 from fabrique import Operation, TypeOperation, Factory, command
-from address_book import book
+from address_book import AddressBook
 from fields import *
+
+book = AddressBook()
 
 
 class Add(Operation):
