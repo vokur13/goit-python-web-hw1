@@ -10,6 +10,10 @@ class AbsBook(ABC):
         ...
 
     @abstractmethod
+    def search(self, key):
+        ...
+
+    @abstractmethod
     def save(self):
         ...
 
