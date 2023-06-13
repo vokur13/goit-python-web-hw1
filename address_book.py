@@ -61,4 +61,3 @@ class AddressBook(UserList, AbsBook):
 
     def value_of(self):
         return self
-
